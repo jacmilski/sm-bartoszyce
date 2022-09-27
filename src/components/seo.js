@@ -9,7 +9,7 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-function Seo({ description, title, children }) {
+function Seo({ description, title, children, address, siteUrl, email }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -17,7 +17,9 @@ function Seo({ description, title, children }) {
           siteMetadata {
             title
             description
-            author
+            address
+            email
+            siteUrl
           }
         }
       }
