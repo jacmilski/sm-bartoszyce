@@ -16,7 +16,7 @@ module.exports = {
         fonts: {
           google: [
             {
-              family: 'Montserrat, sans-serif',
+              family: 'Montserrat',
               variants: ["400", "600", "700"],
             },
           ],
