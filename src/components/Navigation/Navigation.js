@@ -7,7 +7,7 @@ const NavigationWrapper = styled.nav`
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    font-family: Montserrat;
+    font-family: 'Open Sans';
     width: 100%;
     height: 50px;
     background-color: #fff;

@@ -17,6 +17,7 @@ const Header = styled.header`
   position: sticky;
   top: 0;
   left: 0;
+  z-index: 100;
 `;
 
 

@@ -18,6 +18,12 @@ module.exports = {
             {
               family: 'Montserrat',
               variants: ["400", "600", "700"],
+              subsets: ["latin"]
+            },
+            {
+              family: 'Readex Pro',
+              variants: ["400", "500", "600", "700"],
+              subsets: ["latin"]
             },
           ],
         },
@@ -28,6 +34,13 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/assets/images`
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `gallery`,
+        path: `${__dirname}/src/assets/gallery`
       },
     },
     /* {
