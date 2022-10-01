@@ -7,7 +7,7 @@ const NavigationWrapper = styled.nav`
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    font-family: 'Open Sans';
+    font-family: 'Sansita', sans-serif;
     width: 100%;
     height: 50px;
     background-color: #fff;
@@ -17,6 +17,10 @@ const NavigationWrapper = styled.nav`
     a {
         text-decoration: none;
         color: inherit;
+    }
+
+    a:hover {
+        color: #DB2017;
     }
 `;
 

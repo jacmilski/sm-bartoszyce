@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
         background-image: url('static/bg.gif');
         margin: 0;
         padding: 0 0 0 0;
-        font-family: 'Open Sans';
+        font-family: 'Roboto';
     }
     p {
         font-size: 16px;

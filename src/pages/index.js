@@ -4,8 +4,8 @@ const MainPage = () => {
 
     return (
         <>
-        <div>Strona główna</div>
-        <img src="static//bg.gif" alt=""/>
+            <div>Strona główna</div>
+            <img src="static/bg.gif" alt=""/>
         </>
     )
 }

@@ -25,6 +25,21 @@ module.exports = {
               variants: ["400", "500", "600", "700"],
               subsets: ["latin"]
             },
+            {
+              family: 'Roboto',
+              variants: ["400", "500", "700"],
+              subsets: ["latin"]
+            },
+            {
+              family: 'Sansita',
+              variants: ["400", "700"],
+              subsets: ["latin"]
+            },
+            {
+              family: 'Signika',
+              variants: ["400", "500", "700"],
+              subsets: ["latin"]
+            },
           ],
         },
       },
@@ -43,13 +58,6 @@ module.exports = {
         path: `${__dirname}/src/assets/gallery`
       },
     },
-    /* {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `articles`,
-        path: `${__dirname}/src/data/articles`,
-      },
-    }, */
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-layout`,
@@ -57,6 +65,13 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `gallery`,
+        path: `${__dirname}/src/data/gallery`,
       },
     },
     /* {

@@ -1,28 +1,11 @@
 // @ts-nocheck
 import React from 'react';
 import styled from 'styled-components';
-import { graphql } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { graphql} from 'gatsby';
+import PhotoPreview from '../components/PhotoPreview/PhotoPreview';
 
-const GalleryContainer = styled.section`
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-`;
 
-const Header = styled.header`
-    width: 100%;
-
-    h1 {
-        font-size: 36px;
-        text-align: center;
-        font-family: 'Open Sans';
-    }
-`;
-
-const GalleryBox = styled.div`
+const GalleryWrapper = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -31,46 +14,41 @@ const GalleryBox = styled.div`
     padding-bottom: 20px;
 `;
 
-const GalleryItem = styled(GatsbyImage)`
-    width: 300px;
-    height: 170px;
-    margin: 30px;
-`;
-
-const header = {
-    title: `Galeria zdjęć`,
-    description: `...ostatnie wydarzenia`
-}
-
-
-const Gallery = ({ data }) => {
+const GalleryPage = ({ data }) => {
+    
+    const { allMdx: { nodes }} = data;
 
     return (
-        <GalleryContainer>
-            <Header>
-                <h1>{header.title}</h1>
-            </Header>
-            <p>{header.description}</p>
-            <GalleryBox>
-                {data.allFile.edges.map(({ node }) => (
-                    <GalleryItem
-                        key={node.id}
-                        image={node.childImageSharp.gatsbyImageData}
-                    />
-                ))}
-            </GalleryBox>
-        </GalleryContainer>
-    )
-}
+        <>
+          <GalleryWrapper>
+              {nodes.map(node => {
+                console.log(node.frontmatter.featuredImage)
+                  return(
+                  <PhotoPreview
+                      key={node.id}
+                      title={node.frontmatter.title}
+                      description={node.frontmatter.description}
+                      image={node.frontmatter.featuredImage.childImageSharp.gatsbyImageData}
+                      slug={node.frontmatter.slug}
+                  />
+              )})}
+          </GalleryWrapper>
+        </>
+)}
 
 export const query = graphql`
-  query {
-    allFile(filter: {name: {regex: "/gallery/"}}) {
-      edges {
-        node {
-          id
-          childImageSharp {
-            gatsbyImageData(width: 300, placeholder: TRACED_SVG, quality: 80, formats: JPG)
+    query {
+    allMdx {
+      nodes {
+        id
+        frontmatter {
+          description
+          slug
+          title
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData(width: 300, placeholder: TRACED_SVG, quality: 80)
+            }
           }
         }
       }
@@ -78,4 +56,4 @@ export const query = graphql`
   }
 `
 
-export default Gallery;
+export default GalleryPage;
