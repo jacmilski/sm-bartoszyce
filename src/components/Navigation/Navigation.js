@@ -20,7 +20,7 @@ const NavigationWrapper = styled.nav`
     }
 
     a:hover {
-        color: #DB2017;
+        color: #90261f;
     }
 `;
 

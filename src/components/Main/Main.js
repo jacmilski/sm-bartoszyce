@@ -22,7 +22,6 @@ const Main = styled.main`
 `;
 
 const MainPanel = ({ children }) => {
-
     return (
         <MainContainer>
             <Aside></Aside>

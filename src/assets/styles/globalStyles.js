@@ -10,10 +10,15 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: inherit;
     }
     body {
-        background-image: url('static/bg.gif');
+        background-image: url('/static/hd-wallpaper-1327003.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
         margin: 0;
         padding: 0 0 0 0;
         font-family: 'Roboto';
+        color: #333;
     }
     p {
         font-size: 16px;

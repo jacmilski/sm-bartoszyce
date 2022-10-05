@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { graphql} from 'gatsby';
 import PhotoPreview from '../components/PhotoPreview/PhotoPreview';
+import PageInfo from '../components/PageInfo/PageInfo';
 
 
 const GalleryWrapper = styled.div`
@@ -18,11 +19,16 @@ const GalleryPage = ({ data }) => {
     
     const { allMdx: { nodes }} = data;
 
+    const infoData = {
+      title: `Galeria zdjęć`,
+      paragraph: `Ostatnie wydarzenia z życia szkoły...`
+    }
+
     return (
         <>
+          <PageInfo title={infoData.title} paragraph={infoData.paragraph}/>
           <GalleryWrapper>
               {nodes.map(node => {
-                console.log(node.frontmatter.featuredImage)
                   return(
                   <PhotoPreview
                       key={node.id}
@@ -38,7 +44,8 @@ const GalleryPage = ({ data }) => {
 
 export const query = graphql`
     query {
-    allMdx {
+    allMdx(filter: {frontmatter: {featuredImage: {absolutePath: {regex: "/gallery/"}}}}
+  ) {
       nodes {
         id
         frontmatter {

@@ -56,7 +56,7 @@ const CenterBox = styled.div`
         line-height: 1;
         font-size: 1.2em;
         letter-spacing: 2px;
-        color: #DB2017;
+        color: #90261f;
         opacity: 1;
     }
 

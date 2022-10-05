@@ -1,34 +1,34 @@
-/* const path = require(`path`)
+const path = require(`path`)
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const blogPostTemplate = path.resolve(`src/layouts/gallery.js`);
+  const blogPostTemplate = path.resolve(`src/layouts/news.jsx`);
 
   const result = await graphql(`
-    query {
-      allMdx {
-        edges {
-          node {
-            frontmatter {
-              slug
-            }
-            internal {
-              contentFilePath
-            }
-          }
+  query {
+    allMdx {
+      nodes {
+        frontmatter {
+          slug
+        }
+        internal {
+          contentFilePath
         }
       }
     }
+  }
   `)
 
-  result.data.allMdx.edges.forEach(post => {
+  result.data.allMdx.nodes.forEach(news => {
+
+    console.log('gatsby-node', news)
 
     createPage({
-      path: `gallery/${post.node.frontmatter.slug}`,
-      component: `${blogPostTemplate}?__contentFilePath=${post.node.internal.contentFilePath}`,
+      path: `news/${news.frontmatter.slug}`,
+      component: `${blogPostTemplate}?__contentFilePath=${news.internal.contentFilePath}`,
       context: {
-        slug: post.node.frontmatter.slug,
+        slug: news.frontmatter.slug
       },
     })
   });
-} */
+}
