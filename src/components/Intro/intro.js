@@ -62,12 +62,12 @@ const CenterBox = styled.div`
 
     img {
         position: absolute;
-        top: 35%;
+        top: 50%;
         left: 50%;
         transform: translate(-50% ,-50%);
         display: block;
-        width: 60px;
-        height: 70px;
+        width: 110px;
+        height: 120px;
     }
 
     @media screen and (max-width: 576px) {
@@ -90,7 +90,7 @@ const CenterBox = styled.div`
 `;
 
 const RightBox = styled(LeftBox)`
-    background-color: blue;
+    background-color: #519ba4;
     background-image: url(${({url}) => url});;
     box-shadow:
         0 0 0 #fff inset,
@@ -105,7 +105,7 @@ const Intro = () => {
     const data = useStaticQuery(query);
 
     const leftUrl = data.allFile.edges.find(({node}) => node.name.includes('bartoszyce-1'));
-    const rightUrl = data.allFile.edges.find(({node}) => node.name.includes('bartoszyce-2'));
+    const rightUrl = data.allFile.edges.find(({node}) => node.name.includes('logo'));
     const centerUrl = data.allFile.edges.find(({node}) => node.name.includes('tlo'));
     const herbUrl = data.allFile.edges.find(({node}) => node.name.includes('herb'));
 
@@ -114,7 +114,7 @@ const Intro = () => {
             <LeftBox url={leftUrl.node.publicURL}></LeftBox>
                 <CenterBox url={centerUrl.node.publicURL}>
                     <img src={herbUrl.node.publicURL} alt="ikona" />
-                    <h1>Szkoła Muzyczna w Bartoszycach</h1>
+                  {/*   <h1>Szkoła Muzyczna I stopnia w Bartoszycach</h1> */}
                 </CenterBox>
             <RightBox url={rightUrl.node.publicURL}></RightBox>
         </Container>

@@ -21,8 +21,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
   result.data.allMdx.nodes.forEach(news => {
 
-    console.log('gatsby-node', news)
-
     createPage({
       path: `news/${news.frontmatter.slug}`,
       component: `${blogPostTemplate}?__contentFilePath=${news.internal.contentFilePath}`,

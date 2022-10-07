@@ -32,10 +32,10 @@ const GalleryPage = ({ data }) => {
                   return(
                   <PhotoPreview
                       key={node.id}
-                      title={node.frontmatter.title}
-                      description={node.frontmatter.description}
-                      image={node.frontmatter.featuredImage.childImageSharp.gatsbyImageData}
-                      slug={node.frontmatter.slug}
+                      title={node.frontmatter?.title}
+                      description={node.frontmatter?.description}
+                      image={node.frontmatter?.featuredImage?.childImageSharp?.gatsbyImageData}
+                      slug={node.frontmatter?.slug}
                   />
               )})}
           </GalleryWrapper>

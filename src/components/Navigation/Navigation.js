@@ -27,8 +27,12 @@ const NavigationWrapper = styled.nav`
 const Logo = styled.span`
     font-weight: 700;
     font-size: 20px;
-    margin-right: 10px;
     margin-left: 30px;
+
+    img {
+        display: block;
+        height: 100%;
+    }
 `;
 
 const NavigationList = styled.ul`
@@ -40,13 +44,22 @@ const NavigationListItem = styled.li`
     font-weight: 600;
     font-size: 15px;
     margin-left: 32px;
+
+    :first-child {
+        margin-left: -12px;
+    }
 `;
 
 
 const Navigation = () => (
     <NavigationWrapper>
-        <Logo><Link to="/">Logo</Link></Logo>
+        <Logo><Link to="/">
+            <img  src="/static/logo_cut_x80.png" alt="logo"/>
+        </Link></Logo>
         <NavigationList>
+            <NavigationListItem>
+                <Link to="/">Tablica</Link>
+            </NavigationListItem>
             <NavigationListItem>
                 <Link to="/team">Kadra</Link>
             </NavigationListItem>

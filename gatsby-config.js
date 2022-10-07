@@ -1,6 +1,11 @@
 module.exports = {
   flags: {
-    PARALLEL_QUERY_RUNNING: true
+    PARALLEL_QUERY_RUNNING: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PARALLEL_SOURCING: true,
+    DETECT_NODE_MUTATIONS: false,
+    FAST_DEV: true,
+    DEV_SSR: false,
   },
   siteMetadata: {
     title: `Szkoła Muzyczna w Bartoszycach`,
@@ -61,6 +66,20 @@ module.exports = {
         path: `${__dirname}/src/assets/gallery`
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `teachers`,
+        path: `${__dirname}/src/assets/teachers`
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `avatars`,
+        path: `${__dirname}/src/assets/avatars`
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-layout`,
@@ -83,6 +102,13 @@ module.exports = {
       options: {
         name: `gallery`,
         path: `${__dirname}/src/data/gallery`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `teachers`,
+        path: `${__dirname}/src/data/teachers`,
       },
     },
     {

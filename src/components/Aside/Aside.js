@@ -39,7 +39,7 @@ const Border = styled.div`
 const Godlo = styled(ImageBox)`
 `;
 
-const CEA = styled(ImageBox)`
+const CeaLogo = styled(ImageBox)`
 `;
 
 const AsidePanel = () => {
@@ -49,7 +49,7 @@ const AsidePanel = () => {
             <Godlo src="/static/godlo_polski.svg_-255x300.png" alt="polskie godło"/>
             <Border />
             <Link to="https://www.gov.pl/web/cea/">
-                <CEA src="/static/Logo_CEA_kolorowe_.png" alt="CEA-logo" />
+                <CeaLogo src="/static/Logo-CEA-kolorowe.png" alt="CEA-logo" /> {/* Logo-CEA-kolorowe.png */}
             </Link>
             <Border />
             
