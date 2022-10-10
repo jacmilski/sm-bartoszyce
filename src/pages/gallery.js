@@ -1,22 +1,12 @@
 // @ts-nocheck
 import React from 'react';
-import styled from 'styled-components';
+import GalleryWrapper from './CSS/gallery-css';
 import { graphql} from 'gatsby';
 import PhotoPreview from '../components/PhotoPreview/PhotoPreview';
 import PageInfo from '../components/PageInfo/PageInfo';
 
-
-const GalleryWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    padding-bottom: 20px;
-`;
-
 const GalleryPage = ({ data }) => {
-    
+
     const { allMdx: { nodes }} = data;
 
     const infoData = {

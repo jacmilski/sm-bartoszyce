@@ -1,19 +1,10 @@
 // @ts-nocheck
 import React from 'react';
-import styled from 'styled-components';
+import {} from './CSS/index-css';
 import PageInfo from '../components/PageInfo/PageInfo';
 import NewsPreview from '../components/NewsPreview/NewsPreview';
+import NewsWrapper from './CSS/index-css';
 import { graphql } from 'gatsby';
-
-const NewsWrapper = styled.div`
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 0 30px 30px;
-  `;
 
     const infoData = {
         title: `Aktualności`,
@@ -22,8 +13,6 @@ const NewsWrapper = styled.div`
 
 
 const MainPage = ({ data }) => {
-
-  console.log('index', data)
 
     const { allMdx: { nodes }} = data;
 

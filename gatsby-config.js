@@ -2,18 +2,22 @@ module.exports = {
   flags: {
     PARALLEL_QUERY_RUNNING: true,
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
-    PARALLEL_SOURCING: true,
+    PARALLEL_SOURCING: false,
     DETECT_NODE_MUTATIONS: false,
     FAST_DEV: true,
     DEV_SSR: false,
   },
   siteMetadata: {
-    title: `Szkoła Muzyczna w Bartoszycach`,
+    title: `Szkoła Muzyczna I stopnia w Bartoszycach`,
     description: `Tu będzie jakiś opis szkoły...`,
-    address: `ul. Olsztyńska 20/5, Bartoszyce`,
-    siteUrl: `https://google.com`,
-    email: 'sm@bartoszyce.org',
-    author: `Jacek Michalski`
+    address: `ul. Bema 35, 11-200 Bartoszyce`,
+    regon: `522379596`,
+    phoneSecretary: `89 674 78 45`,
+    emailSecretary: `sekretariat@sm-bartoszyce.pl`,
+    directorName: `Andrzej Mierzejewski`,
+    phoneDirector: `798527256`,
+    emailDirector: `mierzejewskiandrzej44@gmail.com`,
+    author: `Jacek Michalski`,
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -29,11 +33,6 @@ module.exports = {
               subsets: ["latin", "latin-ext"]
             },
             {
-              family: 'Readex Pro',
-              variants: ["400", "500", "600", "700"],
-              subsets: ["latin", "latin-ext"]
-            },
-            {
               family: 'Roboto',
               variants: ["400", "500", "700"],
               subsets: ["latin", "latin-ext"]
@@ -41,11 +40,6 @@ module.exports = {
             {
               family: 'Sansita',
               variants: ["400", "700"],
-              subsets: ["latin", "latin-ext"]
-            },
-            {
-              family: 'Signika',
-              variants: ["400", "500", "700"],
               subsets: ["latin", "latin-ext"]
             },
           ],
@@ -90,7 +84,6 @@ module.exports = {
         extensions: [`.mdx`, `.md`],
       },
     },
-    
     {
       resolve: `gatsby-remark-responsive-iframe`,
       options: {
@@ -119,11 +112,17 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-offline`,
+      // options: {
+      //   precachePages: [`/team/`, `/gallery/*`],
+      // },
+    },
+    /* {
       resolve: `gatsby-plugin-page-creator`,
       options: {
         path: `${__dirname}/src/data/news`,
       },
-    },
+    }, */
     /* {
       resolve: `gatsby-plugin-manifest`,
       options: {
