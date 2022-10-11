@@ -1,11 +1,11 @@
 module.exports = {
   flags: {
     PARALLEL_QUERY_RUNNING: true,
-    PRESERVE_FILE_DOWNLOAD_CACHE: true,
-    PARALLEL_SOURCING: false,
-    DETECT_NODE_MUTATIONS: false,
+    //PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    //PARALLEL_SOURCING: false,
+    //DETECT_NODE_MUTATIONS: false,
     FAST_DEV: true,
-    DEV_SSR: false,
+    //DEV_SSR: false,
   },
   siteMetadata: {
     title: `Szkoła Muzyczna I stopnia w Bartoszycach`,
@@ -45,13 +45,6 @@ module.exports = {
             },
           ],
         },
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `documents`,
-        path: `${__dirname}/src/assets/documents`
       },
     },
     {
