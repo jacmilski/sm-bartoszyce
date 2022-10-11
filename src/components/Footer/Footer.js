@@ -11,12 +11,10 @@ import {
     Border
 } from './footer-css';
 import { FaEnvelope } from "@react-icons/all-files/fa/FaEnvelope";
-//import { FaWhatsappSquare } from "@react-icons/all-files/fa/FaWhatsappSquare";
 import { FaPhoneSquareAlt } from "@react-icons/all-files/fa/FaPhoneSquareAlt";
 import { FaHotel } from "@react-icons/all-files/fa/FaHotel";
 import { FcManager } from "@react-icons/all-files/fc/FcManager";
 import { FcBusinesswoman } from "@react-icons/all-files/fc/FcBusinesswoman";
-//import { GrUserManager } from "@react-icons/all-files/gr/GrUserManager";
 
 const Footer = () => {
 
@@ -75,8 +73,6 @@ const Footer = () => {
                     <ul className="contact-list">
                         <li className="contact-item"><FcBusinesswoman className="director" /><span>{name_secretary}</span></li>
                         <Link to="#" className="email"><li className="contact-item"><FaEnvelope className="icon-item" /><span>{email_secretary}</span></li></Link>
-                        {/* <li className="contact-item"><FaWhatsappSquare className="icon-item" /><span>...WhatsUp number</span></li> */}
-                        {/* <li className="contact-item"><FaPhoneSquareAlt className="icon-item" /><span>{phone_director}</span></li> */}
                     </ul>
                     <p><span>Sekretariat czynny:</span></p>
                     <p>wtorek, środa, piątek - godz. 15:30 - 19:30</p>
