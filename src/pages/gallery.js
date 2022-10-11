@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import GalleryWrapper from './CSS/gallery-css';
+import GalleryWrapper from '../CSS/gallery-css';
 import { graphql} from 'gatsby';
 import PhotoPreview from '../components/PhotoPreview/PhotoPreview';
 import PageInfo from '../components/PageInfo/PageInfo';

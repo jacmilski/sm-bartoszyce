@@ -1,9 +1,8 @@
 // @ts-nocheck
 import React from 'react';
-import {} from './CSS/index-css';
 import PageInfo from '../components/PageInfo/PageInfo';
 import NewsPreview from '../components/NewsPreview/NewsPreview';
-import NewsWrapper from './CSS/index-css';
+import NewsWrapper from '../CSS/index-css';
 import { graphql } from 'gatsby';
 
     const infoData = {

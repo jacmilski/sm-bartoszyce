@@ -26,8 +26,6 @@ TeachersWrapper: styled.div`
     }
 `,
 
-/* firstName, surname, image, poster, description , subject */
-
 TeacherCard: styled.div`
     position: relative;
     display: flex;

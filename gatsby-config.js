@@ -15,6 +15,7 @@ module.exports = {
     phoneSecretary: `89 674 78 45`,
     emailSecretary: `sekretariat@sm-bartoszyce.pl`,
     directorName: `Andrzej Mierzejewski`,
+    secretaryName: `Monika Szyszko`,
     phoneDirector: `798527256`,
     emailDirector: `mierzejewskiandrzej44@gmail.com`,
     author: `Jacek Michalski`,
@@ -44,6 +45,13 @@ module.exports = {
             },
           ],
         },
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `documents`,
+        path: `${__dirname}/src/assets/documents`
       },
     },
     {

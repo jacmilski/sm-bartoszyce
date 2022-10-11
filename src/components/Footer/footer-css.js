@@ -104,6 +104,14 @@ export const LeftSide = styled.div`
 
 export const RightSide = styled(LeftSide)`
     border-right: none;
+
+    p {
+        margin: 3px 0;
+    }
+
+    p span {
+        font-weight: 700;
+    }
 `;
 
 export const MiddleSide = styled(LeftSide)`
