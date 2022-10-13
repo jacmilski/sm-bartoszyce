@@ -8,7 +8,8 @@ import {
     LeftSide,
     RightSide,
     MiddleSide,
-    Border
+    Border1,
+    Border2
 } from './footer-css';
 import { FaEnvelope } from "@react-icons/all-files/fa/FaEnvelope";
 import { FaPhoneSquareAlt } from "@react-icons/all-files/fa/FaPhoneSquareAlt";
@@ -50,29 +51,30 @@ const Footer = () => {
                 <LeftSide>
                     <h3>Dane kontaktowe:</h3>
                     <ul className="contact-list">
-                        <li className="contact-item"><FaHotel className="icon-item"/><span>{address}</span></li>
-                        <li className="contact-item"><span className="regon">REGON:</span><span>{regon}</span></li>
-                        <Link to="#" className="email"><li className="contact-item"><FaEnvelope className="icon-item" /><span>{email_secretary}</span></li></Link>
+                        <li className="contact-item"><FaHotel id="address" className="icon-item" /><span>{address}</span></li>
+                        <li className="contact-item"><span id="regon">REGON:</span><span>{regon}</span></li>
+                        <li className="contact-item"><FaEnvelope id="email-secretary" className="icon-item" /><span>{email_secretary}</span></li>
                         {/* <li className="contact-item"><FaWhatsappSquare className="icon-item" /><span>...WhatsUp number</span></li> */}
-                        <li className="contact-item"><FaPhoneSquareAlt className="icon-item" /><span>{phone_secretary}</span></li>
+                        <li className="contact-item"><FaPhoneSquareAlt id="phone-secretary" className="icon-item" /><span>{phone_secretary}</span></li>
                     </ul>
                 </LeftSide>
-                <Border />
+                <Border1 />
+                <Border2 />
                 <MiddleSide>
                     <h3>Dyrekcja:</h3>
                     <ul className="contact-list">
-                        <li className="contact-item"><FcManager className="director" /><span>{name_director}</span></li>
-                        <Link to="#" className="email"><li className="contact-item"><FaEnvelope className="icon-item" /><span>{email_director}</span></li></Link>
-                        {/* <li className="contact-item"><FaWhatsappSquare className="icon-item" /><span>...WhatsUp number</span></li> */}
-                        <li className="contact-item"><FaPhoneSquareAlt className="icon-item" /><span>{phone_director}</span></li>
+                        <li className="contact-item"><FcManager id="director" className="icon-item" /><span>{name_director}</span></li>
+                        <li className="contact-item"><FaEnvelope id="email-director" className="icon-item" /><span>{email_director}</span></li>
+                        <li className="contact-item"><FaPhoneSquareAlt id="phone-director" className="icon-item" /><span>{phone_director}</span></li>
                     </ul>
                 </MiddleSide>
-                <Border />
+                <Border2 />
+                <Border1 />
                 <RightSide>
                 <h3>Sekretariat:</h3>
                     <ul className="contact-list">
-                        <li className="contact-item"><FcBusinesswoman className="director" /><span>{name_secretary}</span></li>
-                        <Link to="#" className="email"><li className="contact-item"><FaEnvelope className="icon-item" /><span>{email_secretary}</span></li></Link>
+                        <li className="contact-item"><FcBusinesswoman className="icon-item"  /><span>{name_secretary}</span></li>
+                        <li className="contact-item"><FaEnvelope id="email-secretary" className="icon-item" /><span>{email_secretary}</span></li>
                     </ul>
                     <p><span>Sekretariat czynny:</span></p>
                     <p>wtorek, środa, piątek - godz. 15:30 - 19:30</p>

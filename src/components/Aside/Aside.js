@@ -12,9 +12,9 @@ const AsidePanel = () => {
             <Border />
             <Navigation2 />
             <Border />
-            <Link to="https://www.gov.pl/web/cea/">
+            <a href="https://www.gov.pl/web/cea/">
                 <CeaLogo src="/static/Logo-CEA-kolorowe.png" alt="CEA-logo" /> {/* Logo-CEA-kolorowe.png */}
-            </Link>
+            </a>
             <Border />
         </AsideContainer>
     )

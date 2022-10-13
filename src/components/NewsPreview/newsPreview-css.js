@@ -32,6 +32,7 @@ export const PreviewInfoLabel = styled(Link)`
     }
 
     h2 {
+        color: #ccc;
         font-size: 18px;
     }
 

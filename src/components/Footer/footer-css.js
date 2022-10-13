@@ -40,6 +40,12 @@ export const FooterDiv = styled.div`
     border-top: 1px solid #ddd;
     padding-bottom: 15px;
     font-family: 'Sansita', sans-serif;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
 `;
 
 export const LeftSide = styled.div`
@@ -50,6 +56,14 @@ export const LeftSide = styled.div`
     width: 30%;
     height: 90%;
     background-color: #fff;
+
+    @media screen and (max-width: 992px) {
+        font-size: 90%;
+    }
+    @media screen and (max-width: 768px) {
+        font-size: 100%;
+        width: 100%;
+    }
 
     h2 {
         margin-top: 0;
@@ -69,35 +83,31 @@ export const LeftSide = styled.div`
 
     .icon-item {
         font-size: 24px;
-        color: #0172BE;
         margin-right: 5px;
+
+        @media screen and (max-width: 992px) {
+            font-size: 90%;
+        }
+        @media screen and (max-width: 768px) {
+            font-size: 85%;
+        }
     }
 
-    .contact-item:nth-of-type(1) .icon-item {
-        color:  #90261f;
-    }
-
-    .contact-item:nth-of-type(2) .icon-item {
-        color:  #27A219;
-    }
-
-    .email .contact-item .icon-item {
-        color: #333;
-    }
-
-    .director {
-        font-size: 24px;
-        margin-right: 5px;
-    }
-
-    a {
-        text-decoration: none;
-        color: #333;
-    }
-
-    .regon {
+    #regon {
         margin-right: 3px;
         font-weight: 700;
+    }
+
+    #address {
+        color: #90261F;
+    }
+
+    #email-secretary {
+        color: #444444;
+    }
+
+    #phone-secretary {
+        color: #0172BE;
     }
 
 `;
@@ -105,24 +115,72 @@ export const LeftSide = styled.div`
 export const RightSide = styled(LeftSide)`
     border-right: none;
 
+    #email-secretary {
+        color: #444;
+    }
+
     p {
         margin: 3px 0;
+
+        @media screen and (max-width: 992px) {
+            font-size: 95%;
+        }
+        @media screen and (max-width: 768px) {
+            font-size: 100%;
+        }
     }
 
     p span {
         font-weight: 700;
+
+        @media screen and (max-width: 992px) {
+            font-size: 100%;
+        }
+        @media screen and (max-width: 768px) {
+            font-size: 100%;
+        }
     }
 `;
 
 export const MiddleSide = styled(LeftSide)`
-    .contact-item:nth-of-type(2) .icon-item {
-        color:  #0172BE;
+    #email-director {
+        color: #444;
+    }
+
+    #phone-director {
+        color: #0172BE;
     }
 `;
 
-export const Border = styled.div`
-    width: 1px;
+export const Border1 = styled.div`
+    width: 2px;
     min-height: 170px;
     background-color: #0172BE;
     align-self: center;
+
+
+
+    @media screen and (min-width: 992px) {
+        display: block;
+    }
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+`;
+
+export const Border2 = styled.div`
+    width: 85%;
+    height: 1px;
+    background-color: #0172BE;
+    align-self: center;
+
+    @media screen and (min-width: 992px) {
+        display: none;
+    }
+    @media screen and (max-width: 992px) {
+        display: none;
+    }
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
 `;

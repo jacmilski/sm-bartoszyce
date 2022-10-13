@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
 import ContactCss from '../CSS/contact-css';
+import { graphql, useStaticQuery } from 'gatsby';
 
 const Contact = () => {
 

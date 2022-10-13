@@ -33,6 +33,7 @@ const MainPage = ({ data }) => {
                       excerpt={excerpt}
                       slug={slug}
                       date={date}
+                      path={'news'}
                   />
               ))}
           </NewsWrapper>

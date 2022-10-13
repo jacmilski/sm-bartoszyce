@@ -3,6 +3,8 @@ const path = require(`path`)
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const blogPostTemplate = path.resolve(`src/layouts/news.jsx`);
+  const documentsTemplate = path.resolve(`src/layouts/documents.jsx`);
+
 
   const result = await graphql(`
   query {
@@ -19,14 +21,25 @@ exports.createPages = async ({ graphql, actions }) => {
   }
   `)
 
-  result.data.allMdx.nodes.forEach(news => {
+  result.data.allMdx.nodes.forEach(item => {
 
-    createPage({
-      path: `news/${news.frontmatter.slug}`,
-      component: `${blogPostTemplate}?__contentFilePath=${news.internal.contentFilePath}`,
-      context: {
-        slug: news.frontmatter.slug
-      },
-    })
+    if (item.frontmatter.slug.includes('info')) {
+      createPage({
+        path: `news/${item.frontmatter.slug}`,
+        component: `${blogPostTemplate}?__contentFilePath=${item.internal.contentFilePath}`,
+        context: {
+          slug: item.frontmatter.slug
+        },
+      })
+    } else {
+      createPage({
+        path: `document/${item.frontmatter.slug}`,
+        component: `${documentsTemplate}?__contentFilePath=${item.internal.contentFilePath}`,
+        context: {
+          slug: item.frontmatter.slug
+        },
+      })
+    }
+
   });
 }

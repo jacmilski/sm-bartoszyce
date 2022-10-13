@@ -1,7 +1,7 @@
 // @ts-nocheck
 import styled from 'styled-components';
 
-const NewsWrapper = styled.div`
+export const NewsWrapper = styled.div`
     width: 100%;
     height: auto;
     display: flex;

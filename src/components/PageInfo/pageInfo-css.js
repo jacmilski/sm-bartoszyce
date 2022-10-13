@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
     color: #333;
 
     h1 {
-        font-size: 52px;
+        font-size: 44px;
         margin: 0;
 
     }
