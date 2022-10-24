@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: inherit;
     }
     body {
-        background-image: url('/static/bg.gif');
+        background-image: url('/bg.gif');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;

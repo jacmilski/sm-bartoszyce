@@ -4,6 +4,7 @@ import PageInfo from '../components/PageInfo/PageInfo';
 import NewsPreview from '../components/NewsPreview/NewsPreview';
 import NewsWrapper from '../CSS/index-css';
 import { graphql } from 'gatsby';
+import slugify from 'slugify';
 
     const infoData = {
         title: `Aktualności`,
@@ -13,56 +14,50 @@ import { graphql } from 'gatsby';
 
 const MainPage = ({ data }) => {
 
-    const { allMdx: { nodes }} = data;
+    const { allDatoCmsNews: { nodes }} = data;
 
-  return (
+    console.log(Boolean(nodes.length))
+
+  return Boolean(nodes.length) ? (
       <>
         <PageInfo title={infoData.title} paragraph={infoData.paragraph}/>
         <NewsWrapper>
               {nodes.map(({
                 id,
-                excerpt,
-                frontmatter: {
-                  title,
-                  date,
-                  slug
-                }}) => (
+                newsTitle,
+                newsDate,
+                newsParagraph
+                }) => (
                   <NewsPreview
                       key={id}
-                      title={title}
-                      excerpt={excerpt}
-                      slug={slug}
-                      date={date}
-                      path={'news'}
+                      title={newsTitle}
+                      paragraph={newsParagraph}
+                      slug={slugify(newsTitle, {
+                        lower: true,
+                      })}
+                      date={newsDate}
+                      isData={Boolean(nodes.length)}
                   />
               ))}
           </NewsWrapper>
       </>
+  ) : (
+    <PageInfo title="Brak wiadomości"/>
   )
 }
 
 /* nie nazywać query! */
 export const query = graphql`
   query {
-    allMdx(
-      sort: {fields: frontmatter___date, order: DESC}
-      filter: {frontmatter: {slug: {regex: "/info/"}}}
-      ) {
+    allDatoCmsNews(sort: {order: DESC, fields: newsDate}) {
       nodes {
         id
-        body
-        frontmatter {
-          title
-          date
-          slug
-        }
-        internal {
-          contentFilePath
-        }
-        excerpt(pruneLength: 20)
+        newsTitle
+        newsDate(formatString: "DD-MM-YYYY")
+        newsParagraph
       }
     }
   }
-`;
+`
 
 export default MainPage;

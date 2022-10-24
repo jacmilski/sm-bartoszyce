@@ -1,45 +1,74 @@
-const path = require(`path`)
+// @ts-nocheck
+const path = require(`path`);
+const slugify = require('slugify');
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      fallback: {
+        fs: false
+      }
+    }
+  })
+}
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const blogPostTemplate = path.resolve(`src/layouts/news.jsx`);
+  const newsTemplate = path.resolve(`src/layouts/news.jsx`);
   const documentsTemplate = path.resolve(`src/layouts/documents.jsx`);
 
 
-  const result = await graphql(`
+  const documentsResult = await graphql(`
   query {
-    allMdx {
+    allDatoCmsDocument {
       nodes {
-        frontmatter {
-          slug
-        }
-        internal {
-          contentFilePath
-        }
+        id
+        title
       }
     }
   }
-  `)
+`);
 
-  result.data.allMdx.nodes.forEach(item => {
-
-    if (item.frontmatter.slug.includes('info')) {
-      createPage({
-        path: `news/${item.frontmatter.slug}`,
-        component: `${blogPostTemplate}?__contentFilePath=${item.internal.contentFilePath}`,
-        context: {
-          slug: item.frontmatter.slug
-        },
-      })
-    } else {
-      createPage({
-        path: `document/${item.frontmatter.slug}`,
-        component: `${documentsTemplate}?__contentFilePath=${item.internal.contentFilePath}`,
-        context: {
-          slug: item.frontmatter.slug
-        },
-      })
+  const newsResult = await graphql(`
+  query {
+    allDatoCmsNews {
+      nodes {
+        id
+        newsTitle
+      }
     }
+  }
+`);
 
+
+
+  documentsResult.data.allDatoCmsDocument.nodes.forEach(item => {
+
+    const slugifiedTitle = slugify(item.title, {
+      lower: true
+    });
+
+    createPage({
+      path: `document/${slugifiedTitle}`,
+      component: documentsTemplate,//`${blogPostTemplate}?__contentFilePath=${item.internal.contentFilePath}`,
+      context: {
+        id: item.id,
+      },
+    })
+  });
+
+  newsResult.data.allDatoCmsNews.nodes.forEach(item => {
+
+    const slugifiedTitle = slugify(item.newsTitle, {
+      lower: true
+    });
+
+    createPage({
+      path: `news/${slugifiedTitle}`,
+      component: newsTemplate,//`${blogPostTemplate}?__contentFilePath=${item.internal.contentFilePath}`,
+      context: {
+        id: item.id,
+      },
+    })
   });
 }

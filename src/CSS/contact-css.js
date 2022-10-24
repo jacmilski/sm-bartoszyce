@@ -7,7 +7,7 @@ const ContactCss = {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 110%;
     `,
 
     InsideWrapper: styled.div`
@@ -44,10 +44,6 @@ const ContactCss = {
             font-size: 23px;
         }
 
-        @media screen and (max-width: 992px) {
-            font-size: 23px;
-        }
-
         @media screen and (max-width: 768px) {
             font-size: 21px;
         }
@@ -58,25 +54,12 @@ const ContactCss = {
     }
 
     .item {
-        font-size: 19px;
-        padding: 4px 0;
-
-        @media screen and (max-width: 1200px) {
-            font-size: 17px;
-            padding: 3px 0;
-        }
-        @media screen and (max-width: 992px) {
-            font-size: 18px;
-            padding: 3px 0;
-        }
-
-        @media screen and (max-width: 768px) {
-            font-size: 17px;
-            padding: 2px 0;
-        }
+        font-size: 16px;
+        padding: 2px 0;
 
         @media screen and (max-width: 480px) {
             font-size: 16px;
+            padding: 2px 0;
         }
     }
 

@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   flags: {
     PARALLEL_QUERY_RUNNING: true,
@@ -48,6 +50,14 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        apiToken: process.env.DATO_CMS_API_KEY,
+        preview: false,
+        disableLiveReload: false,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -59,6 +69,13 @@ module.exports = {
       options: {
         name: `documents`,
         path: `${__dirname}/src/assets/documents`
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `news`,
+        path: `${__dirname}/src/assets/news`
       },
     },
     {

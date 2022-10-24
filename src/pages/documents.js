@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PageInfo from '../components/PageInfo/PageInfo';
-import { NewsPreview as DocumentsPreview } from '../components/NewsPreview/NewsPreview';
+import DocumentsPreview from '../components/DocumentsPreview/DocumentsPreview';
 import { NewsWrapper } from '../CSS/index-css';
 import { graphql } from 'gatsby';
 import { FaFileDownload } from "@react-icons/all-files/fa/FaFileDownload";
@@ -38,11 +38,13 @@ const DocumentElementWrapper = styled.div`
 
 const Documents = ({ data }) => {
 
-    const { allMdx: { nodes } } = data;
+    const { allDatoCmsDocument: { nodes } } = data;
 
     const infoData = {
         title: `Dokumenty szkolne`,
     }
+
+    console.log(nodes[0].url)
 
     return (
         <>
@@ -50,20 +52,23 @@ const Documents = ({ data }) => {
             <DocumentsWrapper>
                 {nodes.map(({
                     id,
-                    excerpt,
-                    frontmatter: {
                     title,
-                    slug
-                }}) => (
-                    <DocumentElementWrapper>
+                    documentFile: {
+                        url
+                    }
+                }) => (
+                    <DocumentElementWrapper key={id}>
                         <DocumentsPreview
-                            key={id}
                             title={title}
-                            excerpt={excerpt}
-                            slug={slug}
-                            path={'document'}
+                            id={id}
                         />
-                        <a href={slug === 'document-status' ? '/static/statut.docx' : '/static/wso.docx'} download key={id} title="pobierz"><FaFileDownload className="icon" />{/* pobierz */}</a>
+                        <a
+                            href={`${url}`}
+                            download
+                            title="pobierz"
+                        >
+                            <FaFileDownload className="icon" />
+                        </a>
                     </DocumentElementWrapper>
                 ))}
             </DocumentsWrapper>
@@ -73,15 +78,12 @@ const Documents = ({ data }) => {
 
 export const query = graphql`
     query {
-        allMdx(filter: {frontmatter: {slug: {regex: "/document/"}}}) {
+        allDatoCmsDocument {
             nodes {
                 id
-                frontmatter {
-                    title
-                    slug
-                }
-                internal {
-                    contentFilePath
+                title
+                documentFile {
+                    url
                 }
             }
         }

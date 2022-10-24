@@ -7,7 +7,7 @@ const Navigation2 = () => (
     <NavigationWrapper>
         <Link to="/">
             <Logo>
-            <img  src="/static/logo_cut_x80.png" alt="logo"/>
+            <img  src="/logo_cut_x80.png" alt="logo"/>
             </Logo>
         </Link>
         <NavigationList>

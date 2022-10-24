@@ -2,23 +2,26 @@
 import React from 'react';
 import { PreviewWrapper, PreviewInfoLabel } from './newsPreview-css';
 
-export const NewsPreview = ({ title, date, slug, excerpt, path }) => {
+export const NewsPreview = ({ title, date, paragraph, slug }) => {
 
-  return title ? (
+ 
+  const excerpt = paragraph.split(' ').slice(0, 3).join(' ');
+
+  return  (
 
     <PreviewWrapper>
-      <PreviewInfoLabel to={`/${path}/${slug}`}>
+      <PreviewInfoLabel to={`/news/${slug}`}>
         <h2>{title}</h2>
-        { slug.includes('info') && <p>{date}</p>}
-        <p>{excerpt}</p>
+        <p>{date}</p>
+        <p>{excerpt}...</p>
       </PreviewInfoLabel>
     </PreviewWrapper>
-  ) : (
+  )/*  : (
     <PreviewWrapper>
       <PreviewInfoLabel>
-        <h2>{slug.includes('info') ? 'Brak wiadomości' : 'Brak dokumentów'}</h2>
+        <h2>Brak wiadomości</h2>
       </PreviewInfoLabel>
     </PreviewWrapper>
-  )};
+  ) */};
 
 export default NewsPreview;

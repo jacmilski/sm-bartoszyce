@@ -1,36 +1,34 @@
 // @ts-nocheck
 import React from 'react';
 import { DocumentsWrapper } from './documents-css';
-import { MDXProvider } from '@mdx-js/react';
 import { Link, graphql } from 'gatsby';
 
-const DocumentsLayout = ({data, children}) => {
+const DocumentsLayout = ({data}) => {
 
-  const shortcodes = { Link };
+  console.log(data)
 
     return(
         <DocumentsWrapper>
           <Link to="/documents">wróć</Link>
-          <h2>{data.mdx.frontmatter.title}</h2>
-          <p>{data.mdx.frontmatter.date}</p>
-          <MDXProvider components={shortcodes}>
-            {children}
-          </MDXProvider>
+          <h2>{data.datoCmsDocument.title}</h2>
+          <div style={{width: '90%'}}>
+            <p style={{width: '100%', whiteSpace: 'pre', overflowWrap: 'enywhere'}}>
+            {data.datoCmsDocument.paragraph}
+            </p>
+          </div>
         </DocumentsWrapper>
     )
 }
 
 /* nie nazywać query! */
 export const query = graphql`
-    query ($slug: String!) { 
-        mdx(frontmatter: {slug: {eq: $slug}}) {
-            body
-            frontmatter {
-                title
-                slug
-            }
-        }
+    query ($id: String!) {
+    datoCmsDocument(id: {eq: $id}) {
+      title
+      paragraph
+      id
     }
+  }
 `;
 
 export default DocumentsLayout;

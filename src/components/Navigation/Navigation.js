@@ -6,7 +6,7 @@ import { NavigationWrapper, Logo, NavigationList, NavigationListItem } from './n
 const Navigation = () => (
     <NavigationWrapper>
         <Logo><Link to="/">
-            <img  src="/static/logo_cut_x80.png" alt="logo"/>
+            <img  src="/logo_cut_x80.png" alt="logo"/>
         </Link></Logo>
         <NavigationList>
             <NavigationListItem>

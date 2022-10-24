@@ -25,7 +25,7 @@ export const Header = styled.header`
 
 export const Header2 = styled.header`
     display: none;
-    position: sticky;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 100;
@@ -41,7 +41,7 @@ export const Header2 = styled.header`
 
 export const Header3 = styled.header`
     display: none;
-    position: sticky;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 100;
