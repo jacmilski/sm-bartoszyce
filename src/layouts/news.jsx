@@ -1,14 +1,11 @@
 // @ts-nocheck
 import React from 'react';
 import { NewsWrapper } from './news-css';
-//import { MDXProvider } from '@mdx-js/react';
 import { Link, graphql } from 'gatsby';
 
 const NewsLayout = ({data, children}) => {
 
   //const shortcodes = { Link };
-
-  console.log(data.datoCmsNews.id)
 
     return(
         <NewsWrapper>
@@ -16,9 +13,6 @@ const NewsLayout = ({data, children}) => {
           <h2>{data.datoCmsNews.newsTitle}</h2>
           <p>{data.datoCmsNews.newsDate}</p>
           <p>{data.datoCmsNews.newsParagraph}</p>
-          {/* <MDXProvider components={shortcodes}>
-            {children}
-          </MDXProvider> */}
         </NewsWrapper>
     )
 }

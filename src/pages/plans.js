@@ -1,12 +1,17 @@
 // @ts-nocheck
 import React from 'react';
+import PageInfo from '../components/PageInfo/PageInfo';
 
 const Plans = () => {
 
+    const infoData = {
+        title: `Plany lekcji`,
+    }
+
     return (
-        <div>
-            <h1>Plany lekcji</h1>
-        </div>
+        <>
+            <PageInfo title={infoData.title} paragraph={''}/>
+        </>
     )
 }
 

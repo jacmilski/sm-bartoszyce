@@ -16,8 +16,6 @@ const MainPage = ({ data }) => {
 
     const { allDatoCmsNews: { nodes }} = data;
 
-    console.log(Boolean(nodes.length))
-
   return Boolean(nodes.length) ? (
       <>
         <PageInfo title={infoData.title} paragraph={infoData.paragraph}/>

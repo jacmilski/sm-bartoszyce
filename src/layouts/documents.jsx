@@ -5,8 +5,6 @@ import { Link, graphql } from 'gatsby';
 
 const DocumentsLayout = ({data}) => {
 
-  console.log(data)
-
     return(
         <DocumentsWrapper>
           <Link to="/documents">wróć</Link>

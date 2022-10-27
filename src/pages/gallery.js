@@ -4,10 +4,11 @@ import GalleryWrapper from '../CSS/gallery-css';
 import { graphql} from 'gatsby';
 import PhotoPreview from '../components/PhotoPreview/PhotoPreview';
 import PageInfo from '../components/PageInfo/PageInfo';
+import slugify from 'slugify';
 
 const GalleryPage = ({ data }) => {
 
-    const { allMdx: { nodes }} = data;
+    const { allDatoCmsGallery: { nodes }} = data;
 
     const infoData = {
       title: `Galeria zdjęć`,
@@ -22,35 +23,31 @@ const GalleryPage = ({ data }) => {
                   return(
                   <PhotoPreview
                       key={node.id}
-                      title={node.frontmatter?.title}
-                      description={node.frontmatter?.description}
-                      image={node.frontmatter?.featuredImage?.childImageSharp?.gatsbyImageData}
-                      slug={node.frontmatter?.slug}
+                      title={node?.heading}
+                      description={node?.paragraph}
+                      image={node?.picture?.gatsbyImageData}
+                      slug={slugify(node.heading, {
+                        lower: true,
+                      })}
                   />
               )})}
           </GalleryWrapper>
         </>
 )}
 
-export const query = graphql`
-    query {
-    allMdx(filter: {frontmatter: {featuredImage: {absolutePath: {regex: "/gallery/"}}}}
-  ) {
+export const query = (graphql`
+  query {
+    allDatoCmsGallery {
       nodes {
+        heading
         id
-        frontmatter {
-          description
-          slug
-          title
-          featuredImage {
-            childImageSharp {
-              gatsbyImageData(width: 300, placeholder: TRACED_SVG, quality: 80)
-            }
-          }
+        paragraph
+        picture {
+          gatsbyImageData(placeholder: TRACED_SVG, width: 300)
         }
       }
     }
   }
-`
+`);
 
 export default GalleryPage;

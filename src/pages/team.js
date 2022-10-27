@@ -5,7 +5,7 @@ import { graphql} from 'gatsby';
 
 const Team = ({ data }) => {
 
-    const { allMdx: { nodes }} = data;
+    const { allDatoCmsTeacher: { nodes }} = data;
 
     const infoData = {
         title: `Nasi nauczyciele`,
@@ -19,18 +19,18 @@ const Team = ({ data }) => {
                     <Stuff.TeacherCard key={teacher.id}>
                         <Stuff.InfoWrapper>
                             <Stuff.AvatarBox>
-                                <Stuff.Avatar image={teacher.frontmatter?.image?.childImageSharp?.gatsbyImageData} />
+                                <Stuff.Avatar image={teacher?.avatarPicture?.gatsbyImageData} alt="" />
                             </Stuff.AvatarBox>
                             <Stuff.InfoBox>
                                 <h2>
-                                    <span>{teacher.frontmatter?.name}</span>
+                                    <span>{teacher?.name}</span>
                                 </h2>
-                                <h3>{teacher.frontmatter?.subject}</h3>
-                                <p>{teacher.frontmatter?.description}</p>
+                                <h3>{teacher?.subject}</h3>
+                                <p>{teacher?.paragraph}</p>
                             </Stuff.InfoBox>
                         </Stuff.InfoWrapper>
                         <Stuff.PosterBox>
-                            <Stuff.Poster image={teacher.frontmatter?.poster?.childImageSharp?.gatsbyImageData} alt="" />
+                            <Stuff.Poster image={teacher?.posterPicture?.gatsbyImageData} alt="" />
                         </Stuff.PosterBox>
                     </Stuff.TeacherCard>
                 ))}
@@ -40,6 +40,25 @@ const Team = ({ data }) => {
 }
 
 export const query = graphql`
+    query {
+        allDatoCmsTeacher {
+            nodes {
+                id
+                name
+                subject
+                paragraph
+                avatarPicture {
+                    gatsbyImageData(width: 255, height: 255, placeholder: TRACED_SVG)
+                }
+                posterPicture {
+                    gatsbyImageData(width: 425, height: 300, placeholder: TRACED_SVG)
+                }
+            }
+        }
+    }
+`
+
+/* export const query = graphql`
     query {
         allMdx(
             filter: {frontmatter: {image: {absolutePath: {regex: "/avatars/"}}}}
@@ -79,15 +98,6 @@ export const query = graphql`
             }
         }
     }
-`
+` */
 
 export default Team;
-
-/* childImageSharp {
-                            gatsbyImageData(
-                                width: 300,
-                                quality: 80,
-                                formats: PNG,
-                                placeholder: TRACED_SVG
-                            )
-                        } */
