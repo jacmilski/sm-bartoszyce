@@ -115,12 +115,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-layout`,
     `gatsby-plugin-fontawesome-css`,
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        extensions: [`.mdx`, `.md`],
-      },
-    },
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-remark-responsive-iframe`,
       options: {
