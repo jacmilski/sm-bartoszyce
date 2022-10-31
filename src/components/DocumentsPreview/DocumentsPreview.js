@@ -1,13 +1,16 @@
 // @ts-nocheck
 import React from 'react';
 import { PreviewWrapper, PreviewInfoLabel } from './documentsPreview-css';
+import slugify from 'slugify';
 
 export const DocumentsPreview = ({ title }) => {
 
   return title ? (
 
     <PreviewWrapper>
-      <PreviewInfoLabel to={`/document/${title.toLowerCase()}`}>
+      <PreviewInfoLabel to={`/document/${slugify(title, {
+        lower: true,
+      })}`}>
         <h2>{title}</h2>
       </PreviewInfoLabel>
     </PreviewWrapper>
