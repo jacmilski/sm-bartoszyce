@@ -48,7 +48,7 @@ export const query = graphql`
                 subject
                 paragraph
                 avatarPicture {
-                    gatsbyImageData(width: 255, height: 300, placeholder: TRACED_SVG)
+                    gatsbyImageData(width: 255, height: 260, placeholder: TRACED_SVG)
                 }
                 posterPicture {
                     gatsbyImageData(width: 425, height: 300, placeholder: TRACED_SVG)
