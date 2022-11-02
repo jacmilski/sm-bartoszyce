@@ -22,6 +22,6 @@ export const Main = styled.main`
     }
 
     @media screen and (max-width: 480px) {
-        min-width: 340px;
+        min-width: 240px;
     }
 `;

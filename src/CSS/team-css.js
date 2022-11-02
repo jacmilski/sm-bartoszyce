@@ -16,7 +16,7 @@ TeachersWrapper: styled.div`
         width: 100%;
     }
     @media screen and (max-width: 480px) {
-        width: 70%;
+        width: 100%;
     }
 `,
 
