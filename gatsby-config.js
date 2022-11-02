@@ -3,9 +3,6 @@ require('dotenv').config();
 module.exports = {
   flags: {
     PARALLEL_QUERY_RUNNING: true,
-    GATSBY_EXPERIMENTAL_DEVJS_LAZY: true,
-    GATSBY_EXPERIMENTAL_QUERY_CONCURRENCY: 16,
-    ENABLE_GATSBY_REFRESH_ENDPOINT: true,
     //PRESERVE_FILE_DOWNLOAD_CACHE: true,
     //PARALLEL_SOURCING: false,
     //DETECT_NODE_MUTATIONS: false,

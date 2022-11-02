@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const NavigationWrapper = styled.nav`
     font-family: 'Sansita', sans-serif;
     width: 100%;
-    height: 240px;
+    min-height: 280px;
     background-color: #fff;
 
     a {

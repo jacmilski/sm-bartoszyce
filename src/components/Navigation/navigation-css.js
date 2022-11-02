@@ -46,8 +46,16 @@ export const NavigationListItem = styled.li`
     font-weight: 600;
     font-size: 15px;
     margin-left: 32px;
+    border-left: 2px solid #ddd;
+    padding: 0 3px;
 
     :first-child {
         margin-left: -12px;
+        border: none;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-left: 20px;
+        font-size: 13px;
     }
 `;

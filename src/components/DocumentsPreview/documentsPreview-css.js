@@ -9,7 +9,8 @@ export const PreviewWrapper = styled.div`
     box-shadow: 7px -7px 2px 0 #90261f;
 
     @media screen and (max-width: 768px) {
-        max-width: 230px;
+        max-width: 210px;
+        margin: 15px;
     }
 
     @media screen and (max-width: 480px) {
@@ -37,7 +38,11 @@ export const PreviewInfoLabel = styled(Link)`
     }
 
     @media screen and (max-width: 768px) {
-        max-width: 230px;
+        max-width: 100%;
+
+        h2 {
+            font-size: 16px;
+        }
     }
 
     @media screen and (max-width: 480px) {

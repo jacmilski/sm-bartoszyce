@@ -1,40 +1,10 @@
 // @ts-nocheck
 import React from 'react';
-import styled from 'styled-components';
-import PageInfo from '../components/PageInfo/PageInfo';
 import DocumentsPreview from '../components/DocumentsPreview/DocumentsPreview';
-import { NewsWrapper } from '../CSS/index-css';
+import DocumentsCss from '../CSS/documents-css';
 import { graphql } from 'gatsby';
 import { FaFileDownload } from "@react-icons/all-files/fa/FaFileDownload";
 
-const DocumentsWrapper = styled(NewsWrapper)`
-    margin: 0;
-`;
-
-const DocumentPageInfo = styled(PageInfo)`
-
-`;
-
-const DocumentElementWrapper = styled.div`
-    width: 50%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    a {
-        text-decoration: none;
-        color: #444444;
-    }
-
-    a:hover {
-        font-weight: bold;
-    }
-
-    .icon {
-        color: #90261F;
-        font-size: 28px;
-    }
-`;
 
 const Documents = ({ data }) => {
 
@@ -48,8 +18,8 @@ const Documents = ({ data }) => {
 
     return (
         <>
-            <DocumentPageInfo title={infoData.title} paragraph={''} />
-            <DocumentsWrapper>
+            <DocumentsCss.DocumentPageInfo title={infoData.title} paragraph={''} />
+            <DocumentsCss.DocumentsWrapper>
                 {nodes.map(({
                     id,
                     title,
@@ -57,7 +27,7 @@ const Documents = ({ data }) => {
                         url
                     }
                 }) => (
-                    <DocumentElementWrapper key={id}>
+                    <DocumentsCss.DocumentElementWrapper key={id}>
                         <DocumentsPreview
                             title={title}
                             id={id}
@@ -69,9 +39,9 @@ const Documents = ({ data }) => {
                         >
                             <FaFileDownload className="icon" />
                         </a>
-                    </DocumentElementWrapper>
+                    </DocumentsCss.DocumentElementWrapper>
                 ))}
-            </DocumentsWrapper>
+            </DocumentsCss.DocumentsWrapper>
         </>
     )
 }

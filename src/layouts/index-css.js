@@ -13,7 +13,7 @@ export const Container = styled.div`
 
 export const Header = styled.header`
     display: block;
-    position: sticky;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 100;

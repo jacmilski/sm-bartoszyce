@@ -17,10 +17,10 @@ const Team = ({ data }) => {
             <Stuff.TeachersWrapper>
                 {nodes.map(teacher => (
                     <Stuff.TeacherCard key={teacher.id}>
+                        <Stuff.AvatarBox>
+                            <Stuff.Avatar image={teacher?.avatarPicture?.gatsbyImageData} alt="" />
+                        </Stuff.AvatarBox>
                         <Stuff.InfoWrapper>
-                            <Stuff.AvatarBox>
-                                <Stuff.Avatar image={teacher?.avatarPicture?.gatsbyImageData} alt="" />
-                            </Stuff.AvatarBox>
                             <Stuff.InfoBox>
                                 <h2>
                                     <span>{teacher?.name}</span>
@@ -48,56 +48,14 @@ export const query = graphql`
                 subject
                 paragraph
                 avatarPicture {
-                    gatsbyImageData(width: 255, height: 260, placeholder: TRACED_SVG)
+                    gatsbyImageData(width: 425, placeholder: TRACED_SVG)
                 }
                 posterPicture {
-                    gatsbyImageData(width: 425, height: 300, placeholder: TRACED_SVG)
+                    gatsbyImageData(placeholder: TRACED_SVG)
                 }
             }
         }
     }
-`
-
-/* export const query = graphql`
-    query {
-        allMdx(
-            filter: {frontmatter: {image: {absolutePath: {regex: "/avatars/"}}}}
-            sort: {fields: frontmatter___id, order: ASC}
-            ) {
-            nodes {
-                id
-                frontmatter {
-                    id
-                    name
-                    subject
-                    description
-                    slug
-                    image {
-                        childImageSharp {
-                            gatsbyImageData(
-                                width: 255,
-                                height: 255,
-                                quality: 80,
-                                placeholder: TRACED_SVG,
-                                formats: AUTO,
-                            )
-                        }
-                    }
-                    poster {
-                        childImageSharp {
-                            gatsbyImageData(
-                                width: 425,
-                                height: 300,
-                                quality: 80,
-                                formats: AUTO,
-                                placeholder: TRACED_SVG
-                            )
-                        }
-                    }
-                }
-            }
-        }
-    }
-` */
+`;
 
 export default Team;

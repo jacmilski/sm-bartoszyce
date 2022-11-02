@@ -15,17 +15,22 @@ TeachersWrapper: styled.div`
         margin: 10px 0;
         width: 100%;
     }
+    @media screen and (max-width: 768px) {
+        margin: 10px 0;
+        width: 100%;
+    }
+
     @media screen and (max-width: 480px) {
-        width: 70%;
+        margin: 10px 0;
+        width: 100%;
     }
 `,
 
 TeacherCard: styled.div`
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
-    min-height: 250px;
+    min-height: 300px;
     border-bottom: 1px solid #aaa;
 
     :first-of-type {
@@ -33,39 +38,46 @@ TeacherCard: styled.div`
     }
 
     @media screen and (max-width: 992px) {
+        position: none;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
     @media screen and (max-width: 768px) {
         position: none;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    @media screen and (max-width: 480px) {
+        position: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 `,
 
 InfoWrapper: styled.div`
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     align-items: center;
-    width: 35%;
+    width: 65%;
 
     @media screen and (max-width: 992px) {
         flex-direction: row;
-        width: 65%;
+        align-items: center;
+        width: 95%;
     }
     @media screen and (max-width: 768px) {
         flex-direction: column;
+        align-items: center;
         width: 100%;
-        padding: 0;
-    }
-    @media screen and (max-width: 480px) {
-        padding: 0;
     }
 `,
 
 AvatarBox: styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 25%;
+    margin: 15px 0;
+    width: 250px;
     height: 250px;
 
 
@@ -76,39 +88,32 @@ AvatarBox: styled.div`
         margin-right: 15px;
     }
     @media screen and (max-width: 992px) {
+        min-width: 150px;
+        min-height: 150px;
+        border: none;
         margin-right: 20px;
-    }
-    @media screen and (max-width: 768px) {
-        align-self: flex-start;
-        margin: 0 40px;
-        min-width: 200px;
-        height: 200px;
-
-    }
-    @media screen and (max-width: 480px) {
-        align-self: center;
-        margin: 10px 0px 30px;
-        height: 180px;
     }
 `,
 
 InfoBox: styled.div`
-    width: 100%;
+    width: 400px;
+    height: 220px;
+    padding: 0 15px;
 
     h2 {
-        font-size: 26px;
-        border-left: 3px solid #0172BE;
+        font-size: 28px;
+        border-left: 4px solid #0172BE;
         padding-left: 4px;
         margin: 0;
     }
 
     h3 {
-        font-size: 22px;
+        font-size: 24px;
         margin-top: 4px;
     }
 
     p {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     @media screen and (max-width: 1200px) {
@@ -117,6 +122,7 @@ InfoBox: styled.div`
         min-height: 150px;
 
         h2 {
+            border-left: 4px solid #0172BE;
             padding: 0 3px;
             font-size: 22px;
             margin: 0 0 5px;
@@ -135,14 +141,42 @@ InfoBox: styled.div`
         }
     }
     @media screen and (max-width: 992px) {
-        padding: 10px 0;
+        max-width: 83%;
+        border-left: none;
+        min-height: 150px;
 
         h2 {
+            border-left: 4px solid #0172BE;
             padding: 0 5px;
-            font-size: 23px;
+            font-size: 28px;
         }
 
         h3 {
+            margin: 0;
+            padding: 0;
+            font-size: 24px;
+        }
+
+        p {
+            margin: 0;
+            padding: 5px 0;
+            font-size: 20px;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        max-width: 83%;
+        border-left: none;
+        min-height: 150px;
+
+        h2 {
+            border-left: 4px solid #0172BE;
+            padding: 0 5px;
+            font-size: 24px;
+        }
+
+        h3 {
+            margin: 0;
+            padding: 0;
             font-size: 20px;
         }
 
@@ -150,36 +184,6 @@ InfoBox: styled.div`
             margin: 0;
             padding: 5px 0;
             font-size: 18px;
-        }
-    }
-    @media screen and (max-width: 768px) {
-        width: 100%;
-        min-height: 100px;
-
-        h2 {
-            font-size: 20px;
-        }
-
-        h3 {
-            font-size: 17px;
-        }
-
-        p {
-            font-size: 14px;
-        }
-    }
-    @media screen and (max-width: 480px) {
-
-        h2 {
-            font-size: 20px;
-        }
-
-        h3 {
-            font-size: 17px;
-        }
-
-        p {
-            font-size: 14px;
         }
     }
 `,
@@ -192,10 +196,13 @@ Poster: styled(GatsbyImage)`
 `,
 
 PosterBox: styled.div`
-    display: flex;
-    justify-content: flex-end;
-    width: 35%;
-    padding: 20px 0;
+    width: 37%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
 
     @media screen and (max-width: 1500px) {
         top: 15px;
@@ -214,11 +221,8 @@ Heading: styled.h1`
     border-bottom: #aaa;
     font-size: 40px;
 
-    @media screen and (max-width: 768px) {
-        padding: 0 15px;
-        font-size: 26px;
-    }
     @media screen and (max-width: 480px) {
+        padding: 0 15px;
         font-size: 28px;
         text-align: center;
     }
