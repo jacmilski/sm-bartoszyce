@@ -20,7 +20,9 @@ export const Wrapper = styled.div`
 
     @media screen and (max-width: 768px) {
         margin: 20px 20px;
-        max-width: 220px;
+        max-width: 100%;
+
+        text-align: center;
     }
     @media screen and (max-width: 480px) {
         margin: 20px 10px;

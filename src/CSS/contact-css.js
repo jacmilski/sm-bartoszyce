@@ -16,13 +16,15 @@ const ContactCss = {
     box-shadow: 7px -7px 2px 0 #90261f;
 
     @media screen and (max-width: 768px) {
-        width: 100%;
+        width: 90%;
         max-width: 310px;
+        height: 65%;
     }
 
     @media screen and (max-width: 480px) {
-        width: 95%;
+        width: 85%;
         max-width: 295px;
+        height: 55%;
     }
     `,
 

@@ -14,7 +14,7 @@ export const PreviewWrapper = styled.div`
     }
 
     @media screen and (max-width: 480px) {
-        max-width: 200px;
+        max-width: 170px;
     }
 `;
 
@@ -46,7 +46,7 @@ export const PreviewInfoLabel = styled(Link)`
     }
 
     @media screen and (max-width: 480px) {
-        max-width: 200px;
+        max-width: 170px;
 
         h2 {
             font-size: 16px;

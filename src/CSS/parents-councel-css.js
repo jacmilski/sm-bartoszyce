@@ -15,7 +15,7 @@ const Councel = {
     }
   
     @media screen and (max-width: 480px) {
-      width: 75%;
+      width: 90%;
     }
   `,
   
@@ -35,6 +35,11 @@ const Councel = {
     display: flex;
     flex-direction: column;
     padding: 15px 0;
+    
+    @media screen and (max-width: 480px) {
+      h3 {
+        font-size: 16px;
+      }
     }
   `,
   
