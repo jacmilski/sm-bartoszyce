@@ -35,6 +35,17 @@ const Councel = {
     display: flex;
     flex-direction: column;
     padding: 15px 0;
+
+    span {
+      margin-left: 4px;
+      margin: 0;
+      padding: 7px 0;
+    }
+
+    h4 {
+      color: #66ADB4;
+      margin: 7px 0 0 0;
+    }
     
     @media screen and (max-width: 480px) {
       h3 {

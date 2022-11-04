@@ -10,6 +10,8 @@ const ParentsCouncel = ({ data }) => {
     datoCmsParentsCounsel: {
       heading,
       member,
+      bank,
+      accountNumber,
       document: { url },
     },
   } = data
@@ -27,6 +29,8 @@ const ParentsCouncel = ({ data }) => {
               </Councel.ListItem>
             ))}
           </Councel.List>
+          <h4>{bank}</h4>
+          <span>Konto: {accountNumber}</span>
         </Councel.InfoLabel>
       </Councel.InsideWrapper>
       <Councel.DocumentElementWrapper>
@@ -44,6 +48,8 @@ export const query = graphql`
     datoCmsParentsCounsel {
       id
       heading
+      bank
+      accountNumber
       document {
         url
       }

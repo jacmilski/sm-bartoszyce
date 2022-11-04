@@ -19,6 +19,9 @@ const Navigation = () => (
                 <Link to="/documents">Dokumenty</Link>
             </NavigationListItem>
             <NavigationListItem>
+                <Link to="/recrutation">Rekrutacja</Link>
+            </NavigationListItem>
+            <NavigationListItem>
                 <Link to="/parents-councel">Rada Rodziców</Link>
             </NavigationListItem>
             <NavigationListItem>
@@ -29,6 +32,9 @@ const Navigation = () => (
             </NavigationListItem>
             <NavigationListItem>
                 <Link to="/contact">Kontakt</Link>
+            </NavigationListItem>
+            <NavigationListItem>
+                <Link to="/psycho-care">Opieka psychologiczna</Link>
             </NavigationListItem>
         </NavigationList>
     </NavigationWrapper>

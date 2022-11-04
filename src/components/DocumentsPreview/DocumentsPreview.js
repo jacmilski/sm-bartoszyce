@@ -3,12 +3,12 @@ import React from 'react';
 import { PreviewWrapper, PreviewInfoLabel } from './documentsPreview-css';
 import slugify from 'slugify';
 
-export const DocumentsPreview = ({ title }) => {
+export const DocumentsPreview = ({ title, dir }) => {
 
   return title ? (
 
     <PreviewWrapper>
-      <PreviewInfoLabel to={`/document/${slugify(title, {
+      <PreviewInfoLabel to={`/${dir}/${slugify(title, {
         lower: true,
       })}`}>
         <h2>{title}</h2>

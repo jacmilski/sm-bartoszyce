@@ -6,12 +6,12 @@ import { graphql } from 'gatsby';
 import { FaFileDownload } from "@react-icons/all-files/fa/FaFileDownload";
 
 
-const Documents = ({ data }) => {
+const Recrutation = ({ data }) => {
 
-    const { allDatoCmsDocument: { nodes } } = data;
+    const { allDatoCmsRecrutation: { nodes } } = data;
 
     const infoData = {
-        title: `Dokumenty szkolne`,
+        title: `Dokumenty rekrutacyjne`,
     }
 
     return (
@@ -29,7 +29,7 @@ const Documents = ({ data }) => {
                         <DocumentsPreview
                             title={title}
                             id={id}
-                            dir={'document'}
+                            dir={'recrutation'}
                         />
                         <a
                             href={`${url}`}
@@ -47,7 +47,7 @@ const Documents = ({ data }) => {
 
 export const query = graphql`
     query {
-        allDatoCmsDocument {
+        allDatoCmsRecrutation {
             nodes {
                 id
                 title
@@ -59,4 +59,4 @@ export const query = graphql`
     }
 `;
 
-export default Documents;
+export default Recrutation;

@@ -32,6 +32,9 @@ const Navigation2 = () => (
             <NavigationListItem>
                 <Link to="/contact">Kontakt</Link>
             </NavigationListItem>
+            <NavigationListItem>
+                <Link to="/psycho-care">Opieka psycholog.</Link>
+            </NavigationListItem>
         </NavigationList>
     </NavigationWrapper>
 );
