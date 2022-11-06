@@ -65,7 +65,6 @@ export const CenterBox = styled.div`
         transform: translate(-50% ,-50%);
         display: block;
         width: 110px;
-        height: 120px;
     }
 
     @media screen and (max-width: 576px) {

@@ -2,6 +2,7 @@
 import React from 'react';
 import ContactCss from '../CSS/contact-css';
 import { graphql, useStaticQuery } from 'gatsby';
+import Seo from '../components/seo';
 
 const Contact = () => {
 
@@ -38,5 +39,7 @@ const { site: {siteMetadata: {address, phoneSecretary, title, emailSecretary, re
         </ContactCss.Wrapper>
     )
 }
+
+export const Head = () => <Seo title='Kontakt' />
 
 export default Contact;

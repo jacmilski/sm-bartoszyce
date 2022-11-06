@@ -33,6 +33,7 @@ export const Logo = styled.span`
 
     img {
         display: block;
+        width: 100%;
         height: 100%;
     }
 `;

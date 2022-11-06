@@ -4,6 +4,7 @@ import DocumentsPreview from '../components/DocumentsPreview/DocumentsPreview';
 import DocumentsCss from '../CSS/documents-css';
 import { graphql } from 'gatsby';
 import { FaFileDownload } from "@react-icons/all-files/fa/FaFileDownload";
+import Seo from '../components/seo';
 
 
 const Recrutation = ({ data }) => {
@@ -58,5 +59,7 @@ export const query = graphql`
         }
     }
 `;
+
+export const Head = () => <Seo title='Rekrutacja do szkoły muzycznej' />
 
 export default Recrutation;

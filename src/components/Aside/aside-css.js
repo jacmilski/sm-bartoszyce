@@ -39,7 +39,10 @@ export const Border = styled.div`
 `;
 
 export const Godlo = styled(ImageBox)`
+    width: 70%;
 `;
 
 export const CeaLogo = styled(ImageBox)`
+    width: 100%;
+
 `;

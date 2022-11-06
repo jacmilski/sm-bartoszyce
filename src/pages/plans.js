@@ -1,34 +1,18 @@
 // @ts-nocheck
 import React from 'react';
-import styled from 'styled-components';
+import PlansCss from '../CSS/plans-css';
 import{ graphql } from 'gatsby';
-
-const MainWrapper = styled.div`
-    width: 100%;
-    height: 100%;
-    padding: 30px;
-`;
-
-const Heading = styled.h1`
-    font-size: 34px;
-    margin: 0;
-`;
-
-const PlansWrapper = styled.div`
-    h2 {
-        font-size: 22px;
-    }
-`;
+import Seo from '../components/seo';
 
 const Plans = ({ data }) => {
 
     const { allDatoCmsLessonsPlan: { nodes } } = data;
 
     return (
-        <MainWrapper>
-            <Heading>Plany lekcji</Heading>
+        <PlansCss.MainWrapper>
+            <PlansCss.Heading>Plany lekcji</PlansCss.Heading>
             {nodes.map(plan => (
-                <PlansWrapper key={plan.id}>
+                <PlansCss.ContentWrapper key={plan.id}>
                     <h2>{plan.heading}</h2>
                     <iframe
                         src={plan.lessonTable.url}
@@ -37,9 +21,9 @@ const Plans = ({ data }) => {
                         height='400px'
                     ></iframe>
                 <hr />
-                </PlansWrapper>
+                </PlansCss.ContentWrapper>
             ))}
-        </MainWrapper>
+        </PlansCss.MainWrapper>
     )
 }
 
@@ -55,6 +39,8 @@ export const query = graphql`
       }
     }
   }
-`
+`;
+
+export const Head = () => <Seo title='Plany lekcji' />
 
 export default Plans;

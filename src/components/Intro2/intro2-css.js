@@ -48,7 +48,6 @@ export const CenterBox = styled.div`
     img {
         display: block;
         width: 110px;
-        height: 120px;
     }
 
     @media screen and (max-width: 576px) {

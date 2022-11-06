@@ -1,65 +1,9 @@
 // @ts-nocheck
 import React from 'react';
-import styled from 'styled-components';
+import PsychoCareCss from '../CSS/psycho-care-css';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { graphql } from 'gatsby';
-
-const Wrapper = styled.div`
-    width: 100%;
-    padding: 20px 50px;
-
-    h1 {
-        font-size: 28px;
-    }
-`;
-
-const Container = styled.div`
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-row-gap: 30px;
-`;
-
-const TextContainer = styled.div`
-
-    h2 {
-        font-size: 20px;
-    }
-
-    ul {
-        list-style: none;
-    }
-
-    .label {
-        color: #90261F;
-        font-weight: bold;
-        padding: 5px;
-    }
-
-    .data {
-        color: #555;
-        margin-left: 7px;
-        font-weight: normal;
-    }
-
-    pre {
-        font-family: inherit;
-        font-size: inherit;
-        padding: 5px;
-        line-height: 1.4;
-        margin: 0;
-    }
-`;
-
-const PostersContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-
-    img {
-        display: block;
-        width: 49%;
-    }
-
-`;
+import Seo from '../components/seo';
 
 const PsychoCare = ({ data }) => {
 
@@ -79,10 +23,10 @@ const PsychoCare = ({ data }) => {
     } } = data;
 
     return (
-        <Wrapper>
+        <PsychoCareCss.Wrapper>
             <h1>Opieka psychologiczna</h1>
-            <Container>
-                <TextContainer>
+            <PsychoCareCss.Container>
+                <PsychoCareCss.TextContainer>
                     <h2>{clinicName}</h2>
                     <ul className='list'>
                         <li className='label'>Psycholog:
@@ -117,19 +61,19 @@ const PsychoCare = ({ data }) => {
                         </li>
                     </ul>
 
-                </TextContainer>
-                <PostersContainer>
-                    <img
-                        src={posterGeneral.url}
+                </PsychoCareCss.TextContainer>
+                <PsychoCareCss.PostersContainer>
+                    <GatsbyImage
+                        image={posterGeneral.gatsbyImageData}
                         alt="poster-1"
                     />
-                    <img
-                        src={posterPupil.url}
+                    <GatsbyImage
+                        image={posterPupil.gatsbyImageData}
                         alt="poster-2"
                     />
-                </PostersContainer>           
-            </Container>
-        </Wrapper>
+                </PsychoCareCss.PostersContainer>           
+            </PsychoCareCss.Container>
+        </PsychoCareCss.Wrapper>
     )
 }
 
@@ -145,23 +89,15 @@ export const query = graphql`
       region
       duty
       posterGeneral {
-        url
+        gatsbyImageData(placeholder: TRACED_SVG, width: 700)
       }
       posterPupil {
-        url
+        gatsbyImageData(placeholder: TRACED_SVG, width: 700)
       }
     }
   }
-`
+`;
+
+export const Head = () => <Seo title='Opieka psychologiczna' />
 
 export default PsychoCare;
-
-/* https://www.gov.pl/web/cea/specjalistyczne-poradnie-cea */
-
-/* SPPP CEA w Supraślu
-Psycholog: Małgorzata Mozerys-Ćwikła
-Adres: PLSP im. A. Grottgera, Plac Tadeusza Kościuszki 1, 16-030 Supraśl
-Dyżury: wtorek 8.00 - 11.00, piątek 12.00 - 15.00
-Kontakt: tel. 85 718-32-16, tel. kom. 501 726 813, e-mail: mozeryscwikla@cea.art.pl
-Skype: SPPPCEASuprasl
-Obszar działalności: region warmińsko-mazurski i podlaski */

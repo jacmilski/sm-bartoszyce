@@ -7,7 +7,7 @@ const AsidePanel = () => {
 
     return (
         <AsideContainer>
-            <Godlo src="/godlo_polski.svg_-255x300.png" alt="polskie godło"/>
+            <Godlo src="/godlo_polski.svg_-255x300.png" alt="polskie godło" />
             <Border />
             <Navigation2 />
             <Border />

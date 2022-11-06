@@ -16,6 +16,7 @@ function Seo({ children }) {
         site {
           siteMetadata {
             title
+            address
             description
             author
           }
@@ -31,6 +32,7 @@ function Seo({ children }) {
     <>
       <title>{defaultTitle}</title>
       <meta name="description" content={metaDescription} />
+      <meta name="address" content={site.siteMetadata.address} />
       <meta property="og:title" content={site.siteMetadata.title} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />
@@ -50,6 +52,7 @@ Seo.defaultProps = {
 Seo.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string.isRequired,
+  author: PropTypes.string,
 }
 
-export default Seo
+export default Seo;

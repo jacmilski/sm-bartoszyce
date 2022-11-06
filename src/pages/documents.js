@@ -3,7 +3,8 @@ import React from 'react';
 import DocumentsPreview from '../components/DocumentsPreview/DocumentsPreview';
 import DocumentsCss from '../CSS/documents-css';
 import { graphql } from 'gatsby';
-import { FaFileDownload } from "@react-icons/all-files/fa/FaFileDownload";
+import { FaFileDownload } from '@react-icons/all-files/fa/FaFileDownload';
+import Seo from '../components/seo';
 
 
 const Documents = ({ data }) => {
@@ -44,6 +45,8 @@ const Documents = ({ data }) => {
         </>
     )
 }
+
+export const Head = () => <Seo title='Dokumenty' />
 
 export const query = graphql`
     query {

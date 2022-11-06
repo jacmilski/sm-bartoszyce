@@ -5,6 +5,7 @@ import { graphql} from 'gatsby';
 import PhotoPreview from '../components/PhotoPreview/PhotoPreview';
 import PageInfo from '../components/PageInfo/PageInfo';
 import slugify from 'slugify';
+import Seo from '../components/seo';
 
 const GalleryPage = ({ data }) => {
 
@@ -49,5 +50,7 @@ export const query = (graphql`
     }
   }
 `);
+
+export const Head = () => <Seo title='Galeria' />
 
 export default GalleryPage;

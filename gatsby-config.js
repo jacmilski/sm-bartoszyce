@@ -11,7 +11,7 @@ module.exports = {
   },
   siteMetadata: {
     title: `Szkoła Muzyczna I stopnia w Bartoszycach`,
-    description: `Tu będzie jakiś opis szkoły...`,
+    description: `Szkoła oferuje naukę gry na instrumentach muzycznych oraz podstawowych zagadnień z zakresu  notacji muzycznej, rytmiki, historii muzyki i literatury muzycznej`,
     address: `ul. Bema 35, 11-200 Bartoszyce`,
     regon: `522379596`,
     phoneSecretary: `89 674 78 45`,
@@ -150,30 +150,34 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-offline`,
-      // options: {
-      //   precachePages: [`/team/`, `/gallery/*`],
-      // },
-    },
-    /* {
-      resolve: `gatsby-plugin-page-creator`,
-      options: {
-        path: `${__dirname}/src/data/news`,
-      },
-    }, */
-    /* {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Szkoła Muzyczna I stopnia w Bartoszycach`,
+        short_name: `SM I st. w Bartoszycach`,
         start_url: `/`,
         background_color: `#663399`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
+        theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon-32x32.png`, // This path is relative to the root of the site.
       },
-    }, */
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+       options: {
+         precachePages: [
+          `/team/`,
+          `/gallery/`,
+          `/contact/`,
+          `/documents/`,
+          `/index/`,
+          `/parents-councel/`,
+          `/plans/`,
+          `/psycho-care/`,
+          `/recrutation/`,
+        ],
+       },
+    },
   ],
 }

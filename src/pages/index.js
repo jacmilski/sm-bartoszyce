@@ -5,6 +5,7 @@ import NewsPreview from '../components/NewsPreview/NewsPreview';
 import NewsWrapper from '../CSS/index-css';
 import { graphql } from 'gatsby';
 import slugify from 'slugify';
+import Seo from '../components/seo';
 
     const infoData = {
         title: `Aktualności`,
@@ -56,6 +57,8 @@ export const query = graphql`
       }
     }
   }
-`
+`;
+
+export const Head = () => <Seo title='Wiadomości' />
 
 export default MainPage;

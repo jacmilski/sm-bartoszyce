@@ -1,9 +1,10 @@
 // @ts-nocheck
-import React from "react"
-import DocumentsPreview from "../components/DocumentsPreview/DocumentsPreview"
-import { FaFileDownload } from "@react-icons/all-files/fa/FaFileDownload"
-import Councel from "../CSS/parents-councel-css"
-import { graphql } from "gatsby"
+import React from 'react';
+import DocumentsPreview from '../components/DocumentsPreview/DocumentsPreview';
+import { FaFileDownload } from '@react-icons/all-files/fa/FaFileDownload';
+import Councel from '../CSS/parents-councel-css';
+import { graphql } from 'gatsby';
+import Seo from '../components/seo';
 
 const ParentsCouncel = ({ data }) => {
   const {
@@ -60,6 +61,8 @@ export const query = graphql`
       }
     }
   }
-`
+`;
+
+export const Head = () => <Seo title='Rada Rodziców' />
 
 export default ParentsCouncel
