@@ -35,7 +35,10 @@ const ParentsCouncel = ({ data }) => {
         </Councel.InfoLabel>
       </Councel.InsideWrapper>
       <Councel.DocumentElementWrapper>
-        <DocumentsPreview title={`Regulamin Rady Rodziców`} />
+        <DocumentsPreview
+          title={`Regulamin Rady Rodziców`}
+          dir={`document`}
+        />
         <a href={`${url}`} download title="pobierz">
           <FaFileDownload className="icon" />
         </a>
