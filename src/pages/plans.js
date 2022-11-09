@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react';
 import PlansCss from '../CSS/plans-css';
-import PageInfo from '../components/PageInfo';
+import PageInfo from '../components/PageInfo/PageInfo';
 import{ graphql } from 'gatsby';
 import Seo from '../components/seo';
 
