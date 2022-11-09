@@ -9,7 +9,7 @@ const Intro2 = () => {
 
     const rightUrl = data.allFile.edges.find(({node}) => node.name.includes('logo_transparent'));
     const centerUrl = data.allFile.edges.find(({node}) => node.name.includes('tlo'));
-    const herbUrl = data.allFile.edges.find(({node}) => node.name.includes('herb_x'));
+    const herbUrl = data.allFile.edges.find(({node}) => node.name.includes('herb_black'));
 
     return (
         <Container>

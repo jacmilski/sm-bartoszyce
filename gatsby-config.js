@@ -15,7 +15,7 @@ module.exports = {
     address: `ul. Bema 35, 11-200 Bartoszyce`,
     regon: `522379596`,
     phoneSecretary: `89 674 78 45`,
-    emailSecretary: `sekretariat@sm-bartoszyce.pl`,
+    emailSecretary: `sekretariat@sm.bartoszyce.pl`,
     directorName: `Andrzej Mierzejewski`,
     secretaryName: `Monika Szyszko`,
     phoneDirector: `798527256`,
