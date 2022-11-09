@@ -82,6 +82,7 @@ const Footer = () => {
             </FooterDiv>
             <Author>
                 <p>wykonał <span>Jacek Michalski,</span> 2022</p>
+                <span className='admin'><a href='https://sm-barto.admin.datocms.com/sign_in' target='_blanc'>Admin</a></span>
             </Author>
         </FooterContainer>
     )

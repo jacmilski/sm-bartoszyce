@@ -11,6 +11,7 @@ export const FooterContainer = styled.footer`
 `;
 
 export const Author = styled.div`
+    position: relative;
     width: 100%;
     height: 35px;
     background-color: #444;
@@ -27,6 +28,23 @@ export const Author = styled.div`
 
     span {
         font-weight: bold;
+    }
+
+    .admin {
+        position: absolute;
+        right: 10px;
+        top: 7px;
+        color: #66ADB4;
+        font-weight: normal;
+
+        a {
+            text-decoration: none;
+            color: #66ADB4;
+        }
+
+        a:visited, a:unvisited, a:active {
+            color: #66ADB4;
+        }
     }
 `;
 
