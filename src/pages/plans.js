@@ -1,6 +1,7 @@
 // @ts-nocheck
 import React from 'react';
 import PlansCss from '../CSS/plans-css';
+import PageInfo from '../components/PageInfo';
 import{ graphql } from 'gatsby';
 import Seo from '../components/seo';
 
@@ -9,7 +10,8 @@ const Plans = ({ data }) => {
     const { allDatoCmsLessonsPlan: { nodes } } = data;
 
     return (
-        <PlansCss.MainWrapper>
+      Boolean(nodes.length) ? (
+          <PlansCss.MainWrapper>
             <PlansCss.Heading>Plany lekcji</PlansCss.Heading>
             {nodes.map(plan => (
                 <PlansCss.ContentWrapper key={plan.id}>
@@ -24,6 +26,9 @@ const Plans = ({ data }) => {
                 </PlansCss.ContentWrapper>
             ))}
         </PlansCss.MainWrapper>
+      )  : (
+        <PageInfo title='Brak planów lekcji' />
+      )
     )
 }
 
