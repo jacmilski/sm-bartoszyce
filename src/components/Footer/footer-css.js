@@ -21,8 +21,9 @@ export const Author = styled.div`
         font-family: 'Sansita', sans-serif;
         font-size: 14px;
         height: 100%;
+        margin: 0;
         font-weight: 400;
-        line-height: .6;
+        line-height: 2.6;
         text-align: center;
     }
 
@@ -32,18 +33,35 @@ export const Author = styled.div`
 
     .admin {
         position: absolute;
+        display: flex;
+        align-items: center;
+        height: 100%;
         right: 10px;
-        top: 7px;
-        color: #66ADB4;
-        font-weight: normal;
+        top: 0;
 
         a {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            line-height: 2.5;
             text-decoration: none;
             color: #66ADB4;
+
+            .admin-span {
+                height: 100%;
+                color: #66ADB4;
+                font-weight: normal;
+            }
         }
 
         a:visited, a:unvisited, a:active {
             color: #66ADB4;
+        }
+
+        .admin-icon {
+            font-size: 22px;
+            color: #ad2922;
+            margin-right: 3px;
         }
     }
 `;

@@ -16,6 +16,8 @@ import { FaPhoneSquareAlt } from "@react-icons/all-files/fa/FaPhoneSquareAlt";
 import { FaHotel } from "@react-icons/all-files/fa/FaHotel";
 import { FcManager } from "@react-icons/all-files/fc/FcManager";
 import { FcBusinesswoman } from "@react-icons/all-files/fc/FcBusinesswoman";
+import { RiAdminFill } from "@react-icons/all-files/ri/RiAdminFill";
+
 
 const Footer = () => {
 
@@ -82,7 +84,12 @@ const Footer = () => {
             </FooterDiv>
             <Author>
                 <p>wykonał <span>Jacek Michalski,</span> 2022</p>
-                <span className='admin'><a href='https://sm-barto.admin.datocms.com/sign_in' target='_blanc'>Admin</a></span>
+                <div className='admin'>
+                    <a href='https://sm-barto.admin.datocms.com/sign_in' target='_blanc'>
+                        <RiAdminFill className='admin-icon' />
+                        <span className='admin-span'>Admin</span>
+                    </a>
+                </div>
             </Author>
         </FooterContainer>
     )

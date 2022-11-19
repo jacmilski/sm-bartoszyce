@@ -3,9 +3,7 @@ import React from 'react';
 import { NewsWrapper } from './news-css';
 import { Link, graphql } from 'gatsby';
 
-const NewsLayout = ({data, children}) => {
-
-  //const shortcodes = { Link };
+const NewsLayout = ({ data }) => {
 
     return(
         <NewsWrapper>
