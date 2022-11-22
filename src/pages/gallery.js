@@ -20,11 +20,12 @@ const GalleryPage = ({ data }) => {
         <>
           <PageInfo title={infoData.title} paragraph={infoData.paragraph}/>
           <GalleryWrapper>
-              {nodes.map(node => {
+              {nodes.reverse().map(node => {
                   return(
                   <PhotoPreview
                       key={node.id}
                       title={node?.heading}
+                      date={node?.pictureDate}
                       description={node?.paragraph}
                       image={node?.picture?.gatsbyImageData}
                       slug={slugify(node.heading, {
@@ -41,6 +42,7 @@ export const query = (graphql`
     allDatoCmsGallery {
       nodes {
         heading
+        pictureDate(formatString: "DD-MM-YYYY")
         id
         paragraph
         picture {

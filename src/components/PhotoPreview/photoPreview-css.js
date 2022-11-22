@@ -36,6 +36,9 @@ export const PreviewInfoLabel = styled.div`
 
     h2 {
         font-size: 18px;
+        span {
+            margin-right: 5px;
+        }
     }
 
     @media screen and (max-width: 992px) {
