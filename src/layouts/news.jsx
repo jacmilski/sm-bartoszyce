@@ -2,22 +2,23 @@
 import React from 'react';
 import { NewsWrapper } from './news-css';
 import { Link, graphql } from 'gatsby';
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const NewsLayout = ({ data }) => {
 
-  console.log(data.datoCmsNews.newsBlocks[0].newsContentPicture.url
+  console.log(data.datoCmsNews.newsBlocks[0].newsContentPicture.gatsbyImageData
     )
 
-  const image = data.datoCmsNews.newsBlocks[0].newsContentPicture.url;
+  const image = data.datoCmsNews.newsBlocks[0].newsContentPicture.gatsbyImageData;
 
     return(
         <NewsWrapper>
           <Link to="/">wróć</Link>
           <h2>{data.datoCmsNews.newsTitle}</h2>
           <p>{data.datoCmsNews.newsDate}</p>
-          {/* <GatsbyImage image={image} /> */}
           <p>{data.datoCmsNews.newsParagraph}</p>
-          <img src={image} alt="" width="450"/>
+          {/* <img src={image} alt="" width="450"/> */}
+          <GatsbyImage image={image} />
         </NewsWrapper>
     )
 }
@@ -33,7 +34,7 @@ export const query = graphql`
       newsBlocks {
         id
         newsContentPicture {
-          url
+          gatsbyImageData(width: 450, placeholder: TRACED_SVG)
         }
       }
     }
