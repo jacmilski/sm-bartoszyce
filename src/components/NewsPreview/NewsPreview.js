@@ -11,17 +11,12 @@ export const NewsPreview = ({ title, date, paragraph, slug }) => {
 
     <PreviewWrapper>
       <PreviewInfoLabel to={`/news/${slug}`}>
-        <h2>{title}</h2>
         <p>{date}</p>
+        <h2>{title}</h2>
         <p>{excerpt}...</p>
       </PreviewInfoLabel>
     </PreviewWrapper>
-  )/*  : (
-    <PreviewWrapper>
-      <PreviewInfoLabel>
-        <h2>Brak wiadomości</h2>
-      </PreviewInfoLabel>
-    </PreviewWrapper>
-  ) */};
+  )
+};
 
 export default NewsPreview;
