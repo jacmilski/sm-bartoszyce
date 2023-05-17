@@ -21,6 +21,9 @@ const Navigation2 = () => (
                 <Link to="/documents">Dokumenty</Link>
             </NavigationListItem>
             <NavigationListItem>
+                <Link to="/recrutation">Rekrutacja</Link>
+            </NavigationListItem>
+            <NavigationListItem>
                 <Link to="/parents-councel">Rada Rodziców</Link>
             </NavigationListItem>
             <NavigationListItem>
