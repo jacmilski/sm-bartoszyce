@@ -78,8 +78,13 @@ const Footer = () => {
                         <li className="contact-item"><FcBusinesswoman className="icon-item"  /><span>{name_secretary}</span></li>
                         <li className="contact-item"><FaEnvelope id="email-secretary" className="icon-item" /><span>{email_secretary}</span></li>
                     </ul>
-                    <p><span>Sekretariat czynny:</span></p>
-                    <p>wtorek, środa, piątek - godz. 15:30 - 19:30</p>
+                    <div>
+                        <p><span>Sekretariat czynny:</span></p>
+                        <p>Poniedziałek: &nbsp; 15 - 19</p>
+                        <p>Wtorek: &nbsp; 10 - 14</p>
+                        <p>Środa: &nbsp; 15 - 19</p>
+                        <p>Czwartek - Piątek: &nbsp; 10 - 14</p>
+                    </div>
                 </RightSide>
             </FooterDiv>
             <Author>
