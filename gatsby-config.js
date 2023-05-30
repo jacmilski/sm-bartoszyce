@@ -17,7 +17,7 @@ module.exports = {
     phoneSecretary: `89 674 78 45`,
     emailSecretary: `sekretariat@sm.bartoszyce.pl`,
     directorName: `Andrzej Mierzejewski`,
-    secretaryName: `Monika Szyszko`,
+    secretaryName: `Agata Ingielewicz`,
     phoneDirector: `798527256`,
     emailDirector: `mierzejewskiandrzej44@gmail.com`,
     author: `Jacek Michalski`,
