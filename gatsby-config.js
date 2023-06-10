@@ -116,7 +116,7 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: `https://szkolamuzyczna.bartoszyce.pl`,
-        sitemap: `https://szkolamuzyczna.bartoszyce.pl/sitemap.xml`,
+        sitemap: `https://szkolamuzyczna.bartoszyce.pl/sitemap/sitemap-0.xml`,
         policy: [{userAgent: '*', allow: '/'}]
       }
     },
