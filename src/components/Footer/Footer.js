@@ -80,10 +80,11 @@ const Footer = () => {
                     </ul>
                     <div>
                         <p><span>Sekretariat czynny:</span></p>
-                        <p>Poniedziałek: &nbsp; 15 - 19</p>
-                        <p>Wtorek: &nbsp; 10 - 14</p>
-                        <p>Środa: &nbsp; 15 - 19</p>
-                        <p>Czwartek - Piątek: &nbsp; 10 - 14</p>
+                        <p>Poniedziałek: &nbsp; 9 - 13</p>
+                        <p>Wtorek: &nbsp; 8 - 12</p>
+                        <p>Środa: &nbsp; 14 - 18</p>
+                        <p>Czwartek: &nbsp; 8 - 12</p>
+                        <p>Piątek: &nbsp; 8 - 12</p>
                     </div>
                 </RightSide>
             </FooterDiv>

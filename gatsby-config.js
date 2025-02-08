@@ -1,3 +1,4 @@
+// @ts-nocheck
 require('dotenv').config();
 
 module.exports = {
@@ -19,7 +20,7 @@ module.exports = {
     directorName: `Andrzej Mierzejewski`,
     secretaryName: `Agata Ingielewicz`,
     phoneDirector: `798527256`,
-    emailDirector: `mierzejewskiandrzej44@gmail.com`,
+    emailDirector: `dyrektor@sm.bartoszyce.pl`,
     author: `Jacek Michalski`,
     siteUrl: `https://szkolamuzyczna.bartoszyce.pl`,
   },
